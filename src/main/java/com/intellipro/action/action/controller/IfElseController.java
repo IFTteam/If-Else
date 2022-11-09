@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class ApiTriggerController {
+public class IfElseController {
     @Autowired
-    TaskController taskController;
+    IfElseTaskController ifElseTaskController;
 
 
     @PostMapping("/API_trigger")
@@ -29,12 +29,12 @@ public class ApiTriggerController {
             int i  = json_text.indexOf(find);
             substr = json_text.substring(i + find.length() + 3, json_text.length() - 1);
             if (substr.contains("null")) {
-                return taskController.ifElsePropertyWithoutValue(task);
+                return ifElseTaskController.ifElsePropertyWithoutValue(task);
             } else if (!substr.contains("null")) {
-                return taskController.ifElseProperty(task);
+                return ifElseTaskController.ifElseProperty(task);
             }
         } else if (json_text.contains("httpEntity") && json_text.contains("repeatInterval") && json_text.contains("triggerTime")) {
-            return taskController.filterByAudienceAction(task);
+            return ifElseTaskController.filterByAudienceAction(task);
         }
         return nullTask;
     }

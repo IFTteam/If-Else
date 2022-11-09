@@ -3,7 +3,7 @@ package com.intellipro.action.action.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.intellipro.action.action.entity.CoreModuleTask;
 
-public interface TaskService {
+public interface IfElseTaskService {
     CoreModuleTask filterByAudienceAction(CoreModuleTask coreModuleTask) throws JsonProcessingException;
 
     CoreModuleTask ifElseProperty(CoreModuleTask coreModuleTask);

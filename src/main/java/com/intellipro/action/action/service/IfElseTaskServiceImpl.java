@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 @Service
-public class TaskServiceImpl implements TaskService{
+public class IfElseTaskServiceImpl implements IfElseTaskService {
 
     @Autowired
     private CoreModuleTaskRepository taskRepository;
